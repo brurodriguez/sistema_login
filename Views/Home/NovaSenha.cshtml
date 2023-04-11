@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Redefinir Senha";
+}
+
+<div class="divLayout">
+    <div class="text-center">
+        <form method="post">
+            <h1 class="display-4">Redefinir Senha</h1>
+            <br />
+            @{
+                var PaginaTela = @TempData["PaginaTela"];
+                if (PaginaTela is null)
+                {
+                    <p>Insira seu e-mail para redefinir sua senha.</p>
+                    <br />
+                    <center>
+                        <h3 class="liter">E-mail:</h3>
+                    </center>
+                    <input required type="email" id="emailRedefinir" name="emailRedefinir" class="iptform" />
+                    <br /><br />
+                    <center><button id="btnRefeninir" name="btnRefeninir" value="1" type="submit" class="btn-toggle"><span class="txtb">Enviar</span></button></center>
+
+                }
+                else if (PaginaTela.ToString() == "1")
+                {
+                    <p>Um código foi enviado para o seu e-mail! Por favor, digite o código e sua nova senha.</p>
+                    <br />
+                    <center>
+                        <h3 class="liter">Código:</h3>
+                    </center>
+                    <input value="@TempData["codigoNovaSenha"]" id="codigoNovaSenha" name="codigoNovaSenha" required class="iptform" type="text" />
+                    <br /><br />
+                    <center>
+                        <h3 class="liter">Senha:</h3>
+                    </center>
+                    <input name="senhaNova" id="senhaNova" onkeyup="javascript:verificaSenha('senhaNova','mostraNova')" required class="iptform" type="password" />
+                    <br /><center><table id="mostraNova"></table></center><br />
+                    <center>
+                        <h3 class="liter">Digite sua nova senha novamente:</h3>
+                    </center>
+                    <input id="senhaNovaRepetida" name="senhaNovaRepetida" required class="iptform" type="password" />
+                    <br /><br />
+                    <center><button id="btnRefeninir" name="btnRefeninir" value="2" type="submit" class="btn-toggle"><span class="txtb">Redefinir</span></button></center>
+                }
+            }
+            <br />
+            <b style="color:#780000;">@TempData["mensagemRedefinirSenha"]</b>
+        </form>
+    </div>
+
+</div>
+   

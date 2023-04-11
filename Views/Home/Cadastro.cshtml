@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<div class="divLayout">
+    <div class="text-center">
+        <h1>@ViewData["Title"]</h1>
+        <p>Faça seu cadastro para ter acesso a plataforma.</p>
+        <br /><br />
+              <form method="post">
+                  <center>
+                      <h3 class="liter">Nome Completo:</h3>
+                  </center>
+                  <input value="@TempData["nomeCompleto"]" id="nomeCompleto" name="nomeCompleto" required class="iptform" type="text" />
+                  <br /><br />
+                  <center>
+                      <h3 class="liter">E-mail:</h3>
+                  </center>
+                  <input value="@TempData["email"]" id="email" name="email" required class="iptform" type="email" />
+                  <br /><br />
+                  <center>
+                      <h3 class="liter">Senha:</h3>
+                  </center>
+                  <input name="senha" id="senha" onkeyup="javascript:verificaSenha('senha','mostra')" required class="iptform" type="password" />
+                  <br /><center><table id="mostra"></table></center><br />
+                  <center>
+                      <h3 class="liter">Digite sua senha novamente:</h3>
+                  </center>
+                  <input id="senhaRepetida" name="senhaRepetida" required class="iptform" type="password" />
+                  <br /><br />
+                  <center><button id="btnCadastro" name="btnCadastro" type="submit" class="btn-toggle"><span class="txtb">Cadastrar</span></button></center>
+                  <br />
+                  <b style="color:#780000;">@TempData["mensagem"]</b>
+              </form>
+    </div>
+</div>

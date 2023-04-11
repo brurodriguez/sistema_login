@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="divLayout">
+    <div class="text-center">
+        <h1 class="display-4">Login</h1>
+        <p>Acesse com seu e-mail e senha.</p>
+        <form method="post">
+            <b style="color:#159c00;">@TempData["mensagemConfirmacao"]</b>
+            <br /><br />
+            <center>
+                <h3 class="liter">E-mail:</h3>
+            </center>
+            <input required name="emailLOGIN" id="emailLOGIN" class="iptform" type="email" />
+            <br /><br />
+            <center>
+                <h3 class="liter">Senha:</h3>
+            </center>
+            <input required id="senhaLogin" name="senhaLogin" class="iptform" type="password" />
+            <br /><br />
+            <center><button type="submit" id="btnLogin" name="btnLogin" class="btn-toggle"><span class="txtb">Login</span></button></center>
+            <br />
+            <b style="color:#780000;">@TempData["mensagemLogin"]</b>
+        </form>
+    </div>
+</div>
+
