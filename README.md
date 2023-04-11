@@ -8,7 +8,7 @@ Criação de banco de dados pode ser feita localmente ou em um servidor
 
 # Clone este repositório
 
-$ git clone https://github.com/baraujorodriguez/sistema_login
+$ git clone https://github.com/brurodriguez/sistema_login
 
 # Autor
 Desenvolvido por: Bruno Rodriguez
